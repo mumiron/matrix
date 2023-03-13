@@ -1,0 +1,34 @@
+---
+Checks: |
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  *,
+  -fuchsia-*,
+  -llvm-header-guard,
+  -llvmlibc-*,
+  -cppcoreguidelines-owning-memory,
+  -google-runtime-references,
+  -modernize-use-trailing-return-type,
+  -modernize-use-nodiscard,
+  -cert-err58-cpp,
+  -cppcoreguidelines-avoid-non-const-global-variables,
+  -google-build-using-namespace,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -readability-magic-numbers,
+  -google-runtime-int,
+  -hicpp-no-array-decay,
+  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -altera-id-dependent-backward-branch,
+  -altera-unroll-loops,
+  -bugprone-easily-swappable-parameters,
+  -cppcoreguidelines-avoid-goto,
+  -hicpp-avoid-goto,
+  -readability-function-cognitive-complexity
+WarningsAsErrors: "true"
+HeaderFilterRegex: '.*/(rgr|matrix|test)/'
+AnalyzeTemporaryDtors: false
+FormatStyle:     file
+CheckOptions:
+  - key:   cppcoreguidelines-explicit-virtual-functions.IgnoreDestructors
+    value: '1'
+...
